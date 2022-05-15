@@ -53,24 +53,25 @@ public final class Exercicio {
 	@Override
 	public String toString() {
 
-		StringBuilder sb = new StringBuilder();
-		sb.append("Programa: ")
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Programa: ")
 		.append(nome);
 
 		if (grupoMuscular != null) {
-			sb.append(", para grupo muscular ")
+			stringBuilder.append(", para grupo muscular ")
 			.append(grupoMuscular);
 		}
 		if (tipoExercicio != null) {
-			sb.append(", com o tipo de exercicio ")
+			stringBuilder.append(", com o tipo de exercicio ")
 			.append(tipoExercicio);
 		}
 		if (equipamento != null) {
-			sb.append(", utilizando o equipamento ")
+			stringBuilder.append(", utilizando o equipamento ")
 			.append(equipamento.getIdentificador());
 		}
-		sb.append('.');
-		return sb.toString();
+		stringBuilder.append('.');
+		
+		return stringBuilder.toString();
 	}
 
 

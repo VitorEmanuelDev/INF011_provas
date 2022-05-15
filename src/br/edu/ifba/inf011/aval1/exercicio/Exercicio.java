@@ -45,6 +45,10 @@ public final class Exercicio {
 	public Equipamento getEquipamento() {
 		return equipamento;
 	}
+	
+	public String getIdentificador() {
+		return this.getEquipamento().getIdentificador();
+	}
 
 
 }

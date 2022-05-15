@@ -70,7 +70,7 @@ public class Client {
 				.comGruposMusculares("ABCD")
 				.build();
 		System.out.println(metalGearSolid.getNome() + " " + metalGearSolid.getGrupoMuscular()
-		+ " " + metalGearSolid.getEquipamento().getIdentificador() + " " + metalGearSolid.getTipoExercicio());
+		+ " " + metalGearSolid.getIdentificador() + " " + metalGearSolid.getTipoExercicio());
 
 		
 		Exercicio superMario =  new Builder("Rotina SUper Mario", factory)
@@ -79,7 +79,7 @@ public class Client {
 				.comGruposMusculares("ABC")
 				.build();
 		System.out.println(superMario.getNome() + " " + superMario.getGrupoMuscular()
-		+ " " + superMario.getEquipamento().getIdentificador() + " " + superMario.getTipoExercicio());
+		+ " " + superMario.getIdentificador() + " " + superMario.getTipoExercicio());
 		
 		Exercicio sprinterCell =  new Builder("Rotina Tom Clancy", factory)
 				.comEquipamento(HALTERES, "C145")
@@ -87,6 +87,6 @@ public class Client {
 				.comGruposMusculares("AB")
 				.build();
 		System.out.println(sprinterCell.getNome() + " " + sprinterCell.getGrupoMuscular()
-		+ " " + sprinterCell.getEquipamento().getIdentificador() + " " + sprinterCell.getTipoExercicio());
+		+ " " + sprinterCell.getIdentificador() + " " + sprinterCell.getTipoExercicio());
 	}
 }

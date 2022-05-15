@@ -22,7 +22,7 @@ public class Builder {
 			.map(GruposMuscularesEnum::name)
 			.collect(Collectors.toList());
 
-	/*	List<ExercicioEnum> tiposExerciciosList = Arrays.asList(ExercicioEnum.values()); */
+	List<ExercicioEnum> tiposExerciciosList = Arrays.asList(ExercicioEnum.values()); 
 
 	public Builder(String nome, EquipamentoFactory factory) {
 		if (nome == null) {
@@ -36,7 +36,7 @@ public class Builder {
 	}
 
 	public Builder comGruposMusculares(String grupoMuscular) {
-	
+
 		if(gruposMuscularesList.contains(grupoMuscular.toUpperCase())) {
 			this.setGrupoMuscular(grupoMuscular.toUpperCase());
 		}
@@ -49,7 +49,9 @@ public class Builder {
 	}
 
 	public Builder comTipoExercicio(ExercicioEnum tipoExercicio) {
-		this.setTipoExercicio(tipoExercicio);
+		if(tiposExerciciosList.contains(tipoExercicio)) {
+			this.setTipoExercicio(tipoExercicio);
+		}
 		return this;
 	}
 
@@ -58,7 +60,7 @@ public class Builder {
 	}
 
 	public Builder comEquipamento(EquipamentoEnum tipoEquipamento, String identificador) {
-	
+
 		if(EquipamentoEnum.ACESSORIOS.equals(tipoEquipamento)){
 			equipamento = factory.getAcessorios().get(identificador);
 		}

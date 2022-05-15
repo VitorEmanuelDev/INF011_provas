@@ -7,7 +7,6 @@ public final class Maquinas extends Equipamento {
 
 	public Maquinas(String identificador, int quantidade) {
 		super(identificador, quantidade);
-	
 	}
 
 	@Override
@@ -36,7 +35,9 @@ public final class Maquinas extends Equipamento {
 	}
 	
 	public void determinarMarca(String marca) {
-		setMarca(marca);
+		if(this.marca == null) {
+			setMarca(marca);
+		}	
 	}
 
 }

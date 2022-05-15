@@ -2,12 +2,12 @@ package br.edu.ifba.inf011.aval1.equipamento;
 
 public abstract class Equipamento {
 	
-	protected String identificador;
-	protected int quantidade;
+	private String identificador;
+	private int quantidade;
 	
 	public Equipamento(String identificador, int quantidade) {
-		this.identificador = identificador;
-		this.quantidade = quantidade;
+		this.setIdentificador(identificador);
+		this.setQuantidade(quantidade);
 	}
 	
 	abstract EquipamentoEnum getEquipamento();
@@ -27,6 +27,10 @@ public abstract class Equipamento {
 	public void adicionarEquipamento(int quantidade) {
 		int novaQuantidade = getQuantidade() + quantidade;
 		setQuantidade(novaQuantidade);
+	}
+
+	private void setIdentificador(String identificador) {
+		this.identificador = identificador;
 	}
 
 }

@@ -11,7 +11,7 @@ import static br.edu.ifba.inf011.aval1.equipamento.EquipamentoEnum.MAQUINAS;
 
 import java.util.HashMap;
 
-public final class EquipamentoFactory {
+public class EquipamentoFactory {
 	
 	private HashMap<String, Acessorios> acessorios = new HashMap<>();
 	private HashMap<String, Maquinas> maquinas = new HashMap<>();
@@ -58,5 +58,20 @@ public final class EquipamentoFactory {
 		return null;
 		
 	}
+
+	public HashMap<String, Acessorios> getAcessorios() {
+		return acessorios;
+	}
+
+
+	public HashMap<String, Maquinas> getMaquinas() {
+		return maquinas;
+	}
+
+
+	public HashMap<String, Halteres> getHalteres() {
+		return halteres;
+	}
+
 
 }

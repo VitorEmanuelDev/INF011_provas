@@ -6,8 +6,6 @@ public final class Acessorios extends Equipamento {
 	
 	public Acessorios(String identificador, int quantidade) {
 		super(identificador, quantidade);
-		this.identificador = identificador;
-		this.quantidade = quantidade;
 	}
 
 	@Override

@@ -22,6 +22,7 @@ public class Builder {
 			.map(GruposMuscularesEnum::name)
 			.collect(Collectors.toList());
 
+	//essa lista abaixo nao faz sentido...
 	List<ExercicioEnum> tiposExerciciosList = Arrays.asList(ExercicioEnum.values()); 
 
 	public Builder(String nome, EquipamentoFactory factory) {

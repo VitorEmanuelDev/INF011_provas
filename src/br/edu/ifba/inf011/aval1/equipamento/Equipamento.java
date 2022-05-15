@@ -1,15 +1,15 @@
 package br.edu.ifba.inf011.aval1.equipamento;
 
 public abstract class Equipamento {
-	
+
 	private String identificador;
 	private int quantidade;
-	
+
 	public Equipamento(String identificador, int quantidade) {
 		this.setIdentificador(identificador);
 		this.setQuantidade(quantidade);
 	}
-	
+
 	abstract EquipamentoEnum getEquipamento();
 
 	public String getIdentificador() {
@@ -23,10 +23,12 @@ public abstract class Equipamento {
 	private void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	
+
 	public void adicionarEquipamento(int quantidade) {
-		int novaQuantidade = getQuantidade() + quantidade;
-		setQuantidade(novaQuantidade);
+		if(quantidade > 0 && quantidade < 200) {
+			int novaQuantidade = getQuantidade() + quantidade;
+			this.setQuantidade(novaQuantidade);
+		}
 	}
 
 	private void setIdentificador(String identificador) {

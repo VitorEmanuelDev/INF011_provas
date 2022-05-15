@@ -1,7 +1,7 @@
 package br.edu.ifba.inf011.aval1.equipamento;
 
 public final class Halteres extends Equipamento {
-	
+
 	private double peso;
 
 	public Halteres(String identificador, int quantidade) {
@@ -20,9 +20,17 @@ public final class Halteres extends Equipamento {
 	private void setPeso(double peso) {
 		this.peso = peso;
 	}
-	
+
 	public void determinarPeso(double peso) {
-		setPeso(peso);
+		if(peso > 0 && peso < 150) {
+			this.setPeso(peso);
+		}
+		if(peso < 0) {
+			this.setPeso(1);
+		}
+		if(peso > 150) {
+			this.setPeso(150);
+		}
 	}
-	
+
 }

@@ -21,9 +21,11 @@ public final class Maquinas extends Equipamento {
 	private void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
 	public void criarDescricao(String descricao) {
-		setDescricao(descricao);
+		if(descricao != null && !descricao.isEmpty()) {
+			this.setDescricao(descricao);
+		}
 	}
 
 	public String getMarca() {
@@ -33,10 +35,10 @@ public final class Maquinas extends Equipamento {
 	private void setMarca(String marca) {
 		this.marca = marca;
 	}
-	
+
 	public void determinarMarca(String marca) {
-		if(this.marca == null) {
-			setMarca(marca);
+		if(marca != null && !marca.isEmpty()) {
+			this.setMarca(marca);
 		}	
 	}
 

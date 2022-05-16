@@ -30,6 +30,18 @@ public abstract class Equipamento {
 			this.setQuantidade(novaQuantidade);
 		}
 	}
+	
+	public void retirarEquipamento(int quantidade) {
+		
+		if(quantidade < 0) {
+			quantidade = quantidade * -1;
+		}	
+		if(getQuantidade() - quantidade < 0) {
+			quantidade = 0;
+		}
+			int novaQuantidade = getQuantidade() - quantidade;
+			this.setQuantidade(novaQuantidade);
+	}
 
 	private void setIdentificador(String identificador) {
 		this.identificador = identificador;

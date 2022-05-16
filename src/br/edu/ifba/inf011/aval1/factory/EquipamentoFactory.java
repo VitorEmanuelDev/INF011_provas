@@ -34,10 +34,8 @@ public class EquipamentoFactory {
 			}else {
 				acessorios.get(identificador).adicionarEquipamento(quantidade);
 				return acessorios.get(identificador);
-			}
-			
-		}
-		if(tipo.equals(MAQUINAS)) {
+			}		
+		}else if(tipo.equals(MAQUINAS)) {
 			if(!maquinas.containsKey(identificador)){
 				maquinas.put(identificador, (Maquinas) maquinaFactory.getfactory(identificador, quantidade));
 				return maquinas.get(identificador);
@@ -45,8 +43,7 @@ public class EquipamentoFactory {
 				maquinas.get(identificador).adicionarEquipamento(quantidade);
 				return maquinas.get(identificador);
 			}
-		}
-		if(tipo.equals(HALTERES)) {
+		}else if(tipo.equals(HALTERES)) {
 			if(!halteres.containsKey(identificador)){
 				halteres.put(identificador, (Halteres) halteresFactory.getfactory(identificador, quantidade));
 				return halteres.get(identificador);

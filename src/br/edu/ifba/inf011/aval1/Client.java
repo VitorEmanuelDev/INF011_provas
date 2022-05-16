@@ -69,7 +69,7 @@ public class Client {
 				.comTipoExercicio(ExercicioEnum.RESISTENCIA)
 				.comGruposMusculares("ABCD")
 				.build();
-		System.out.println(metalGearSolid.toString());
+		System.out.println(metalGearSolid);
 
 		
 		Exercicio superMario =  new Builder("Rotina SUper Mario", factory)
@@ -77,13 +77,13 @@ public class Client {
 				.comTipoExercicio(ExercicioEnum.FUNCIONAL)
 				.comGruposMusculares("ABC")
 				.build();
-		System.out.println(superMario.toString());
+		System.out.println(superMario);
 		
 		Exercicio sprinterCell =  new Builder("Rotina Tom Clancy", factory)
 				.comEquipamento(HALTERES, "C145")
 				.comTipoExercicio(ExercicioEnum.CARDIOVASCULAR)
 				.comGruposMusculares("AB")
 				.build();
-		System.out.println(sprinterCell.toString());
+		System.out.println(sprinterCell);
 	}
 }

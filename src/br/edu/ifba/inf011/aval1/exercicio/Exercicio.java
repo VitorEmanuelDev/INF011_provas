@@ -1,54 +1,21 @@
 package br.edu.ifba.inf011.aval1.exercicio;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import br.edu.ifba.inf011.aval1.equipamento.Equipamento;
-import br.edu.ifba.inf011.aval1.equipamento.EquipamentoEnum;
 
 public final class Exercicio {
 
 	private String nome;
-	private String grupoMuscular;
-	private ExercicioEnum tipoExercicio;
-	private Equipamento equipamento;
-
-	/*List<String> gruposMuscularesList = Stream.of(GruposMuscularesEnum.values())
-			.map(GruposMuscularesEnum::name)
-			.collect(Collectors.toList());
-
-	List<ExercicioEnum> tiposExerciciosList = Arrays.asList(ExercicioEnum.values()); */
+	private List<GruposMuscularesEnum> gruposMusculares;
+	private List<ExercicioEnum> tiposExercicios;
+	private List<Equipamento> equipamentos;
 
 	public Exercicio(Builder builder) {
 		this.nome = builder.getNome();
-		this.grupoMuscular = builder.getGrupoMuscular();
-		this.tipoExercicio = builder.getTipoExercicio();
-		this.equipamento = builder.getEquipamento();
+		this.gruposMusculares = builder.getGruposMusculares();
+		this.tiposExercicios = builder.getTiposExercicios();
+		this.equipamentos = builder.getEquipamentos();
 	}
-
-	/*public String getNome() {
-		return nome;
-	}
-
-	public String getGrupoMuscular() {
-		return grupoMuscular;
-	}
-
-
-	public ExercicioEnum getTipoExercicio() {
-		return tipoExercicio;
-	}
-
-
-	public Equipamento getEquipamento() {
-		return equipamento;
-	}
-
-	public String getIdentificador() {
-		return this.getEquipamento().getIdentificador();
-	}*/
 
 	@Override
 	public String toString() {
@@ -57,17 +24,29 @@ public final class Exercicio {
 		stringBuilder.append("Programa: ")
 		.append(nome);
 
-		if (grupoMuscular != null) {
-			stringBuilder.append(", para grupo muscular ")
-			.append(grupoMuscular);
+		if (gruposMusculares != null && !gruposMusculares.isEmpty()) {
+			stringBuilder.append(", para os grupos musculares: ");
+			for (GruposMuscularesEnum grupoMuscular : gruposMusculares) {
+				stringBuilder.append(grupoMuscular);
+			}
 		}
-		if (tipoExercicio != null) {
-			stringBuilder.append(", com o tipo de exercicio ")
-			.append(tipoExercicio);
+		if (tiposExercicios != null && !tiposExercicios.isEmpty()) {
+			stringBuilder.append(", com os tipos de exercicios: ");
+			for (ExercicioEnum exercicio : tiposExercicios) {
+				stringBuilder.append(exercicio.name());
+				if (exercicio != tiposExercicios.get(tiposExercicios.size() - 1)) {
+					stringBuilder.append(", ");
+				}
+			}
 		}
-		if (equipamento != null) {
-			stringBuilder.append(", utilizando o equipamento ")
-			.append(equipamento.getIdentificador());
+		if (equipamentos != null && !equipamentos.isEmpty()) {
+			stringBuilder.append(", utilizando os equipamentos: ");
+			for (Equipamento equipamento : equipamentos) {
+				stringBuilder.append(equipamento.getIdentificador());
+				if (equipamento != equipamentos.get(equipamentos.size() - 1)) {
+					stringBuilder.append(", ");
+				}
+			}
 		}
 		stringBuilder.append('.');
 		

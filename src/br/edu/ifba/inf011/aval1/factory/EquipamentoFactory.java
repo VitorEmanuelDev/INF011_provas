@@ -1,13 +1,7 @@
 package br.edu.ifba.inf011.aval1.factory;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.util.HashMap;
-import java.util.List;
-import java.util.Properties;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import javax.management.InstanceNotFoundException;
 

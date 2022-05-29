@@ -2,6 +2,9 @@ package br.edu.ifba.inf011.aval1;
 
 import static br.edu.ifba.inf011.aval1.equipamento.EquipamentoEnum.*;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import javax.management.InstanceNotFoundException;
 
 import br.edu.ifba.inf011.aval1.equipamento.*;
@@ -12,8 +15,9 @@ public class Cliente {
 
 	static EquipamentoFactory factory = EquipamentoFactory.getInstance();
 
-	public static void main(String[] args) throws InstanceNotFoundException {
+	public static void main(String[] args) throws InstanceNotFoundException, FileNotFoundException, IOException{
 		// questão 1
+		
 		Acessorio acessorio1 = (Acessorio) factory.getConcreteFactory(ACESSORIOS, "A123", 2);	
 		acessorio1.setDescricao("descricao teste A123");
 		System.out.println(acessorio1.getEquipamento() + " " + acessorio1.getDescricao() + " " + acessorio1.getQuantidade());

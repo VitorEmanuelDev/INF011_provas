@@ -1,29 +1,16 @@
 package br.edu.ifba.inf011.aval1.exercicio;
 
 public enum GruposMuscularesEnum {
-	A("TREINO A: PEITO / COSTAS"),
-	AB("TREINO A: PEITO / COSTAS\n"
-			+ "\n"
-			+ "TREINO B: BÍCEPS / TRICEPS + ANTEBRAÇOS"),
-	ABC("TREINO A: PEITO / COSTAS\n"
-			+ "\n"
-			+ "TREINO B: BÍCEPS / TRICEPS + ANTEBRAÇOS\n"
-			+ "\n"
-			+ "TREINO C: OMBROS / TRAPÉZIO+ ABDÔMEN"),
-	ABCD("TREINO A: PEITO / COSTAS\n"
-			+ "\n"
-			+ "TREINO B: BÍCEPS / TRICEPS + ANTEBRAÇOS\n"
-			+ "\n"
-			+ "TREINO C: OMBROS / TRAPÉZIO+ ABDÔMEN\n"
-			+ "\n"
-			+ "TREINO D: PERNAS + PANTURRILHAS\n"
-			+ "\n"
-			+ "");
+	A("TREINO A: PEITO + BÍCEPS"),
+	B("TREINO B: COSTAS + TRICEPS"),
+	C("TREINO C: LOMBAR + ANTEBRAÇOS + ABDÔMEN"),
+	D("TREINO D: OMBROS + TRAPÉZIO"),
+	E("TREINO E: BÍCEPS FEMORAL + QUADRICEPS + PANTURILHA");
 
-	public final String gruposMusculares;
+	public final String grupoMuscular;
 
 	GruposMuscularesEnum(String gruposMusculares) {
-		this.gruposMusculares = gruposMusculares;
+		this.grupoMuscular = gruposMusculares;
 	}
 
 }

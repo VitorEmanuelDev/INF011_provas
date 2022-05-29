@@ -21,8 +21,6 @@ public abstract class Equipamento {
 	}
 
 	public void atualizaQuantidade(int quantidade) {
-		// se for negativo significa que podemos cair na situação onde o cliente terá uma quantidade negativa,
-		// comportamento não permitido
 		if ((quantidade < 0 && (this.quantidade + quantidade) <= 0)) {
 			throw new IllegalArgumentException("Quantidade do equipamento não pode ser menor que 0");
 		}

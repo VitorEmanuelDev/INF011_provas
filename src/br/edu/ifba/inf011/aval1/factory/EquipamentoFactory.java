@@ -1,5 +1,6 @@
 package br.edu.ifba.inf011.aval1.factory;
 
+
 import java.util.HashMap;
 
 import javax.management.InstanceNotFoundException;
@@ -12,7 +13,7 @@ public class EquipamentoFactory {
 	private static EquipamentoFactory instancia;
 
 	private HashMap<String, Equipamento> equipamentos;
-	
+
 	AcessorioFactory acessoFactory = new AcessorioFactory();
 	MaquinaFactory maquinaFactory = new MaquinaFactory();
 	HalterFactory halterFactory = new HalterFactory();
@@ -23,29 +24,30 @@ public class EquipamentoFactory {
 		}
 		return instancia;
 	}
-		
+
 	private EquipamentoFactory() {
 		this.equipamentos = new HashMap<>();
 	}
 
 	public Equipamento getConcreteFactory(EquipamentoEnum tipo, String identificador, int quantidade) throws InstanceNotFoundException {
-		Equipamento eqp = equipamentos.get(identificador);
-		if (eqp == null) {
+		Equipamento equipamento = equipamentos.get(identificador);
+
+		if (equipamento == null) {
 			if (tipo.equals(EquipamentoEnum.ACESSORIOS)) {
-				eqp = acessoFactory.getfactory(identificador, quantidade);
+				equipamento = acessoFactory.getfactory(identificador, quantidade);
 			} else if (tipo.equals(EquipamentoEnum.MAQUINAS)) {
-				eqp = maquinaFactory.getfactory(identificador, quantidade);
+				equipamento = maquinaFactory.getfactory(identificador, quantidade);
 			} else if (tipo.equals(EquipamentoEnum.HALTERES)) {
-				eqp = halterFactory.getfactory(identificador, quantidade);
+				equipamento = halterFactory.getfactory(identificador, quantidade);
 			} else {
 				throw new InstanceNotFoundException();
 			}
-			equipamentos.put(identificador, eqp);
+			equipamentos.put(identificador, equipamento);
 		} else {
-			eqp.atualizaQuantidade(quantidade);
+			equipamento.atualizaQuantidade(quantidade);
 		}
 
-		return eqp;
+		return equipamento;
 	}
 
 	public HashMap<String, Equipamento> getEquipamentos() {

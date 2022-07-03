@@ -2,6 +2,7 @@ package br.edu.ifba.inf011.aval1.exercicio;
 
 import java.util.List;
 import br.edu.ifba.inf011.aval1.equipamento.Equipamento;
+import br.edu.ifba.inf011.aval1.programa.Serie;
 
 public final class Exercicio {
 
@@ -9,12 +10,57 @@ public final class Exercicio {
 	private List<GruposMuscularesEnum> gruposMusculares;
 	private List<ExercicioEnum> tiposExercicios;
 	private List<Equipamento> equipamentos;
+	private Serie serie;
 
-	public Exercicio(Builder builder) {
-		this.nome = builder.getNome();
-		this.gruposMusculares = builder.getGruposMusculares();
-		this.tiposExercicios = builder.getTiposExercicios();
-		this.equipamentos = builder.getEquipamentos();
+	public Exercicio(String nome, List<GruposMuscularesEnum> gruposMusculares,
+			List<ExercicioEnum> tiposExercicios, List<Equipamento> equipamentos) {
+		this.nome = nome;
+		this.gruposMusculares = gruposMusculares;
+		this.tiposExercicios = tiposExercicios;
+		this.equipamentos = equipamentos;
+	}
+	
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<GruposMuscularesEnum> getGruposMusculares() {
+		return gruposMusculares;
+	}
+
+	public void setGruposMusculares(List<GruposMuscularesEnum> gruposMusculares) {
+		this.gruposMusculares = gruposMusculares;
+	}
+
+
+	public List<ExercicioEnum> getTiposExercicios() {
+		return tiposExercicios;
+	}
+
+
+	public void setTiposExercicios(List<ExercicioEnum> tiposExercicios) {
+		this.tiposExercicios = tiposExercicios;
+	}
+
+	public List<Equipamento> getEquipamentos() {
+		return equipamentos;
+	}
+
+	public void setEquipamentos(List<Equipamento> equipamentos) {
+		this.equipamentos = equipamentos;
+	}
+
+	public Serie getSerie() {
+		return serie;
+	}
+
+	public void setSerie(Serie serie) {
+		this.serie = serie;
 	}
 
 	@Override

@@ -14,10 +14,9 @@ public class FullBodyStrategy implements ProgramaStrategy{
 	public List<Serie> executarListaSeriesDoDia(List<Serie> listaSeries) {
 		LocalDateTime now = LocalDateTime.now();
 		DayOfWeek day = now.getDayOfWeek();
-		//DayOfWeek day = DayOfWeek.MONDAY;
 		List<Serie> listaSeriesDia = new ArrayList<>();
 
-		if(day == DayOfWeek.MONDAY || day == DayOfWeek.WEDNESDAY || day == DayOfWeek.FRIDAY){
+		if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.FRIDAY)){
 			listaSeries.forEach(serie -> {
 				listaSeriesDia.add(serie);
 			});

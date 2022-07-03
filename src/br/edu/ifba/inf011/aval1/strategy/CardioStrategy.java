@@ -16,11 +16,11 @@ public class CardioStrategy implements ProgramaStrategy{
 		DayOfWeek day = now.getDayOfWeek();     
 		List<Serie> listaSeriesDia = new ArrayList<>();
 
-		if(day == DayOfWeek.MONDAY || day == DayOfWeek.WEDNESDAY || day == DayOfWeek.FRIDAY){
+		if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.FRIDAY)){
 			listaSeries.forEach(serie -> {	
 				List<ExercicioEnum> listaExerciciosTipo = serie.getExercicio().getTiposExercicios();
 				listaExerciciosTipo.forEach(tipo -> {
-					if(tipo == ExercicioEnum.CARDIOVASCULAR)
+					if(tipo.equals(ExercicioEnum.CARDIOVASCULAR) )
 						listaSeriesDia.add(serie);
 				});
 

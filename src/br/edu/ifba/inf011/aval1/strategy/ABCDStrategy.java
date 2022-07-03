@@ -17,22 +17,22 @@ public class ABCDStrategy implements ProgramaStrategy{
 		DayOfWeek day = now.getDayOfWeek();
 		List<Serie> listaSeriesDia = new ArrayList<>();
 
-		if(day == DayOfWeek.MONDAY || day == DayOfWeek.TUESDAY || day == DayOfWeek.WEDNESDAY || day == DayOfWeek.THURSDAY){
+		if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.TUESDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.THURSDAY)){
 
 			listaSeries.forEach(serie -> {
 				List<GruposMuscularesEnum> gruposMusculares = serie.getExercicio().getGruposMusculares();
 
 				gruposMusculares.forEach(grupo -> {
-					if((grupo.equals(GruposMuscularesEnum.OMBROS) ||grupo.equals(GruposMuscularesEnum.ABDOMINAL)) && day == DayOfWeek.MONDAY){
+					if((grupo.equals(GruposMuscularesEnum.OMBROS) ||grupo.equals(GruposMuscularesEnum.ABDOMINAL)) && day.equals(DayOfWeek.MONDAY)){
 						listaSeriesDia.add(serie);
 					}	            
-					if((grupo.equals(GruposMuscularesEnum.INFERIORES)) && day == DayOfWeek.TUESDAY){
+					if((grupo.equals(GruposMuscularesEnum.INFERIORES)) && day.equals(DayOfWeek.TUESDAY)){
 						listaSeriesDia.add(serie);
 					}	                	
-					if((grupo.equals(GruposMuscularesEnum.PEITO) || grupo.equals(GruposMuscularesEnum.TRICEPS)) && day == DayOfWeek.WEDNESDAY){
+					if((grupo.equals(GruposMuscularesEnum.PEITO) || grupo.equals(GruposMuscularesEnum.TRICEPS)) && day.equals(DayOfWeek.WEDNESDAY)){
 						listaSeriesDia.add(serie);
 					}
-					if((grupo.equals(GruposMuscularesEnum.COSTAS) || grupo.equals(GruposMuscularesEnum.BICEPS)) && day == DayOfWeek.THURSDAY){
+					if((grupo.equals(GruposMuscularesEnum.COSTAS) || grupo.equals(GruposMuscularesEnum.BICEPS)) && day.equals(DayOfWeek.THURSDAY)){
 						listaSeriesDia.add(serie);
 					}   
 				});

@@ -158,6 +158,8 @@ public class Cliente {
 				.comSerie(serie2)
 				.comSerie(serie3)
 				.build();
+//		System.out.println(programa.getListaSeries());
+//		System.out.println(programa.getTipo());
 
 		System.out.println(programa.executarProximaSerie());
 

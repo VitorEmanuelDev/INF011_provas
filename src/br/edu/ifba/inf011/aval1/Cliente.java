@@ -20,7 +20,7 @@ public class Cliente {
 
 	static EquipamentoSingleton factory = EquipamentoSingleton.getInstance();
 
-	public static void main(String[] args) throws InstanceNotFoundException, FileNotFoundException, IOException{
+	public static void main(String[] args) throws Exception{
 
 		Equipamento acessorio1 = null;
 		Equipamento acessorio2 = null;
@@ -131,6 +131,7 @@ public class Cliente {
 		Serie serie1 = builderSerie
 				.reset()
 				.setExercicio(sprinterCell)
+				
 				.setNumeroRepeticoes(15)
 				.setQuantidade(4)
 				.build();
@@ -158,7 +159,7 @@ public class Cliente {
 				.comSerie(serie3)
 				.build();
 
-		System.out.println(programa);
+		System.out.println(programa.executarProximaSerie());
 
 	}
 }

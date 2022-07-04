@@ -20,7 +20,7 @@ public interface SerieStrategy {
 			CardioStrategy cardio = new CardioStrategy();
 			listaSeriesPrograma = cardio.executarListaSeriesDoDia(listaSeries);
 			break;
-		case Legs:
+		case ABCD:
 			ABCDStrategy legs = new ABCDStrategy();
 			listaSeriesPrograma = legs.executarListaSeriesDoDia(listaSeries);
 			break;

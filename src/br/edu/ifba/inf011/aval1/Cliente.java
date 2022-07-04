@@ -23,14 +23,6 @@ public class Cliente {
 	public static void main(String[] args) throws Exception{
 
 		Equipamento acessorio1 = null;
-		Equipamento acessorio2 = null;
-		Equipamento acessorio3 = null;
-		Equipamento maquina1 = null;
-		Equipamento maquina2 = null;
-		Equipamento maquina3 = null;
-		Equipamento halter1 = null;
-		Equipamento halter2 = null;
-		Equipamento halter3 = null;
 		try {
 			acessorio1 =  factory.getConcreteFactory(ACESSORIOS, "A123", 2);	
 			acessorio1.setDescricao("descricao teste A123");
@@ -38,12 +30,14 @@ public class Cliente {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		Equipamento acessorio2 = null;
 		try {
 			acessorio2 = factory.getConcreteFactory(ACESSORIOS, "A123", 4);	
 			System.out.println(acessorio2.getEquipamento() + " " + acessorio2.getDescricao() + " " + acessorio2.getQuantidade());
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		Equipamento acessorio3 = null;
 		try {
 			acessorio3 = (Acessorio) factory.getConcreteFactory(ACESSORIOS, "A987", 4);	
 			acessorio3.setDescricao("descricao teste A987");
@@ -51,6 +45,7 @@ public class Cliente {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		Equipamento maquina1 = null;
 		try {
 			maquina1 = (Maquina) factory.getConcreteFactory(MAQUINAS, "B123", 2);	
 			maquina1.setDescricao("descricao teste B123");
@@ -59,12 +54,14 @@ public class Cliente {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		Equipamento maquina2 = null;
 		try {
 			maquina2 = (Maquina) factory.getConcreteFactory(MAQUINAS, "B123", 6);	
 			System.out.println(maquina2.getEquipamento() + " " + maquina2.getDescricao() + " " + maquina2.getMarca() + " " + maquina2.getQuantidade());
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		Equipamento maquina3 = null;
 		try {
 			maquina3 = (Maquina) factory.getConcreteFactory(MAQUINAS, "B765", 3);	
 			maquina3.setDescricao("descricao teste B765");
@@ -73,7 +70,7 @@ public class Cliente {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-
+		Equipamento halter1 = null;
 		try {
 			halter1 = (Halter) factory.getConcreteFactory(HALTERES, "C123", 2);		
 			halter1.setPeso(15);
@@ -81,12 +78,14 @@ public class Cliente {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		Equipamento halter2 = null;
 		try {
 			halter2 = (Halter) factory.getConcreteFactory(HALTERES, "C123", 9);		
 			System.out.println(halter2.getEquipamento() + " " + halter2.getIdentificador() + " " + halter2.getPeso() + " " + halter2.getQuantidade());
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		Equipamento halter3 = null;
 		try {
 			halter3 = (Halter) factory.getConcreteFactory(HALTERES, "C145", 7);		
 			halter3.setPeso(80);

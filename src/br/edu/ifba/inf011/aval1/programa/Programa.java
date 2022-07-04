@@ -2,7 +2,6 @@ package br.edu.ifba.inf011.aval1.programa;
 
 import java.util.List;
 
-import br.edu.ifba.inf011.aval1.strategy.ProgramaStrategy;
 import br.edu.ifba.inf011.aval1.strategy.SerieStrategy;
 
 public class Programa implements SerieStrategy{
@@ -17,8 +16,6 @@ public class Programa implements SerieStrategy{
 
 
 	public List<Serie> executarProximaSerie() throws Exception {
-		System.out.println(this.tipo);
-		System.out.println(this.listaSeries);
 		return executarListaSeriesPorTipo(this.tipo, this.listaSeries);
 	}
 

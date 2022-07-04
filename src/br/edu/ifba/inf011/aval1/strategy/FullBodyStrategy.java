@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.ifba.inf011.aval1.programa.ProgramaEnum;
 import br.edu.ifba.inf011.aval1.programa.Serie;
 
 public class FullBodyStrategy implements ProgramaStrategy{
@@ -13,7 +12,8 @@ public class FullBodyStrategy implements ProgramaStrategy{
 	@Override
 	public List<Serie> executarListaSeriesDoDia(List<Serie> listaSeries) {
 		LocalDateTime now = LocalDateTime.now();
-		DayOfWeek day = now.getDayOfWeek();
+		//DayOfWeek day = now.getDayOfWeek();
+		DayOfWeek day = DayOfWeek.MONDAY;
 		List<Serie> listaSeriesDia = new ArrayList<>();
 
 		if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.FRIDAY)){

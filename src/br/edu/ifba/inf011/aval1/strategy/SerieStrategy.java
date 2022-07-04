@@ -13,7 +13,6 @@ public interface SerieStrategy {
 		switch(tipo) {
 		case FullBody:
 			FullBodyStrategy fullBody = new FullBodyStrategy();
-			System.out.println("DENTRO " + listaSeries);
 			listaSeriesPrograma = fullBody.executarListaSeriesDoDia(listaSeries);
 			break;
 		case Cardio:

@@ -38,18 +38,20 @@ public class Aluno implements Observable{
 	public void removerSerieRealizada() {
 		LocalDateTime now = LocalDateTime.now();
 		DayOfWeek day = now.getDayOfWeek();  
-		this.getPrograma().getListaSeries().forEach(serie -> {
-			if(programa.getTipo().equals(ProgramaEnum.Cardio) || programa.getTipo().equals(ProgramaEnum.FullBody)) {
-				if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.FRIDAY)){
-					serie.setRealizada();				
+		if(this.getPrograma().getListaSeries().size() != 0) {
+			this.getPrograma().getListaSeries().forEach(serie -> {
+				if(programa.getTipo().equals(ProgramaEnum.Cardio) || programa.getTipo().equals(ProgramaEnum.FullBody)) {
+					if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.FRIDAY)){
+						serie.setRealizada();				
+					}
 				}
-			}
-			if(programa.getTipo().equals(ProgramaEnum.ABCD)) {
-				if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.TUESDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.THURSDAY)){
-					serie.setRealizada();	
+				if(programa.getTipo().equals(ProgramaEnum.ABCD)) {
+					if(day.equals(DayOfWeek.MONDAY) || day.equals(DayOfWeek.TUESDAY) || day.equals(DayOfWeek.WEDNESDAY) || day.equals(DayOfWeek.THURSDAY)){
+						serie.setRealizada();	
+					}
 				}
-			}
-		});
+			});
+		}
 		this.nofificarInstrutores();
 	}
 

@@ -3,8 +3,6 @@ package br.edu.ifba.inf011.aval1.programa;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.ifba.inf011.aval1.strategy.ProgramaStrategy;
-
 public class ProgramaBuilder {
 
     private List<Serie> listaSeries;

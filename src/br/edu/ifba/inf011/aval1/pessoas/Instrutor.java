@@ -1,8 +1,8 @@
 package br.edu.ifba.inf011.aval1.pessoas;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.List;
-
+import java.time.format.DateTimeFormatter;
 
 public class Instrutor implements Observer {
 
@@ -11,8 +11,6 @@ public class Instrutor implements Observer {
 	public Instrutor(String nome) {
 		this.nome = nome;
 	}
-	
-	List<Aluno> listaAlunos;
 
 	public String getNome() {
 		return nome;
@@ -22,23 +20,15 @@ public class Instrutor implements Observer {
 		this.nome = nome;
 	}
 
-	public List<Aluno> getListaAlunos() {
-		return listaAlunos;
-	}
-
-	public void setListaAlunos(List<Aluno> listaAlunos) {
-		this.listaAlunos = listaAlunos;
-	}
-
 	@Override
 	public void atualizar(Aluno aluno) {
 		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
 		if(aluno.getPrograma().getListaSeries().size() == 0) {
 			System.out.println("O Aluno " + aluno.getNome() + 
 					" concluiu o programa " + aluno.getPrograma().getTipo() +
-					" às " + now);
+					". Horário " + now.format(formatter));
 		}
 	}
-
 	
 }

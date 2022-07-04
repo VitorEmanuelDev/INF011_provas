@@ -2,14 +2,11 @@ package br.edu.ifba.inf011.aval1;
 
 import static br.edu.ifba.inf011.aval1.equipamento.EquipamentoEnum.*;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import javax.management.InstanceNotFoundException;
-
 import br.edu.ifba.inf011.aval1.equipamento.*;
 import br.edu.ifba.inf011.aval1.exercicio.*;
 import br.edu.ifba.inf011.aval1.factory.EquipamentoSingleton;
+import br.edu.ifba.inf011.aval1.pessoas.Aluno;
+import br.edu.ifba.inf011.aval1.pessoas.Instrutor;
 import br.edu.ifba.inf011.aval1.programa.Programa;
 import br.edu.ifba.inf011.aval1.programa.ProgramaBuilder;
 import br.edu.ifba.inf011.aval1.programa.ProgramaEnum;
@@ -130,7 +127,7 @@ public class Cliente {
 		Serie serie1 = builderSerie
 				.reset()
 				.setExercicio(sprinterCell)
-				
+
 				.setNumeroRepeticoes(15)
 				.setQuantidade(4)
 				.build();
@@ -157,10 +154,17 @@ public class Cliente {
 				.comSerie(serie2)
 				.comSerie(serie3)
 				.build();
-//		System.out.println(programa.getListaSeries());
-//		System.out.println(programa.getTipo());
-
-		System.out.println(programa.executarProximaSerie());
+		programa.executarProximaSerie().forEach(serie -> {
+			System.out.println("\nSERIE : " + serie.getExercicio() + "\n" +
+							   "QUANTIDADE : " + serie.getQuantidade() + "\n" +
+							   "REPETIÇÕES : " + serie.getNumeroRepeticoes()); 
+		});
+		
+		Aluno aluno = new Aluno("Janaína");
+		aluno.setPrograma(programa);
+		Instrutor instrutor = new Instrutor("Alberta");
+		aluno.adicionarInstrutores(instrutor);
+		aluno.removerSerieRealizada();
 
 	}
 }

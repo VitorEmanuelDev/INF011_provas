@@ -104,7 +104,7 @@ public class ConcreteExercicio  implements Exercicio{
 
 
 	@Override
-	public void adicionarTipo(ExercicioEnum tipo) {
+	public void montar() {
 		// TODO Auto-generated method stub
 		
 	}

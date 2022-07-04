@@ -3,6 +3,6 @@ package br.edu.ifba.inf011.aval1.exercicio;
 
 public interface Exercicio {
 
-	public abstract void adicionarTipo(ExercicioEnum tipo);
+	public abstract void montar();
 
 }

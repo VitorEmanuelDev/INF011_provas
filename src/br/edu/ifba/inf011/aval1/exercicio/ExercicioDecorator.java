@@ -9,8 +9,7 @@ public class ExercicioDecorator implements Exercicio{
 	}
 
 	@Override
-	public void adicionarTipo(ExercicioEnum tipo) {
-		// TODO Auto-generated method stub
+	public void montar() {
 		
 	}
 

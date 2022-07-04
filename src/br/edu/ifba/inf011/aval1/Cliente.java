@@ -94,7 +94,7 @@ public class Cliente {
 
 		ExercicioBuilder builderExercicio  = new ExercicioBuilder();
 
-		Exercicio metalGearSolid = builderExercicio
+		ConcreteExercicio metalGearSolid = builderExercicio
 				.reset("Rotina Solid Snake")
 				.comEquipamento(acessorio1)
 				.comEquipamento(maquina1)
@@ -104,7 +104,7 @@ public class Cliente {
 				.build();
 		System.out.println(metalGearSolid);
 
-		Exercicio superMario = builderExercicio
+		ConcreteExercicio superMario = builderExercicio
 				.reset("Rotina Super Mario Bros")
 				.comEquipamento(maquina1)
 				.comEquipamento(acessorio2)
@@ -113,7 +113,7 @@ public class Cliente {
 				.build();
 		System.out.println(superMario);
 
-		Exercicio sprinterCell = builderExercicio
+		ConcreteExercicio sprinterCell = builderExercicio
 				.reset("Rotina Gary and his Demons")
 				.comEquipamento(maquina2)
 				.comEquipamento(halter3)

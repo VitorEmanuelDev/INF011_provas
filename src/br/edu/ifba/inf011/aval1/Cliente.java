@@ -121,11 +121,11 @@ public class Cliente {
 				.comGruposMusculares(GruposMuscularesEnum.INFERIORES)
 				.build();
 		System.out.println(sprinterCell);
-		
-		
-		
-		
-		
+
+
+
+
+
 		SerieBuilder builderSerie = new SerieBuilder();
 		Serie serie1 = builderSerie
 				.reset()
@@ -148,8 +148,8 @@ public class Cliente {
 				.setNumeroRepeticoes(15)
 				.setQuantidade(4)
 				.build();
-		
-		
+
+
 
 		ProgramaBuilder programaBuilder = new ProgramaBuilder();
 
@@ -161,17 +161,17 @@ public class Cliente {
 				.build();
 		programa.executarProximaSerie().forEach(serie -> {
 			System.out.println("\nSERIE : " + serie.getExercicio() + "\n" +
-							   "QUANTIDADE : " + serie.getQuantidade() + "\n" +
-							   "REPETIÇÕES : " + serie.getNumeroRepeticoes()); 
+					"QUANTIDADE : " + serie.getQuantidade() + "\n" +
+					"REPETIÇÕES : " + serie.getNumeroRepeticoes()); 
 		});
-		
+
 		Aluno aluno = new Aluno("Janaína");
 		aluno.setPrograma(programa);
 		Instrutor instrutor = new Instrutor("Alberta");
 		aluno.adicionarInstrutores(instrutor);
 		aluno.removerSerieRealizada();
-		
-		
+
+
 		ExercicioBase therapyGecko = builderExercicio
 				.reset("Rotina Therapy Gecko")
 				.comEquipamento(maquina1)
@@ -179,7 +179,7 @@ public class Cliente {
 				.comTipoExercicio(ExercicioEnum.RESISTENCIA)
 				.comGruposMusculares(GruposMuscularesEnum.COSTAS)
 				.build();
-		
+
 		ExercicioBase softSkillsEngineering = builderExercicio
 				.reset("Rotina Soft Skills Engineering")
 				.comEquipamento(maquina1)
@@ -187,7 +187,7 @@ public class Cliente {
 				.comTipoExercicio(ExercicioEnum.FUNCIONAL)
 				.comGruposMusculares(GruposMuscularesEnum.PEITO)
 				.build();
-		
+
 		ExercicioBase JoeRoganExperience = builderExercicio
 				.reset("Rotina The Joe Rogan Experience")
 				.comEquipamento(maquina1)
@@ -195,22 +195,24 @@ public class Cliente {
 				.comTipoExercicio(ExercicioEnum.RESISTENCIA)
 				.comGruposMusculares(GruposMuscularesEnum.ABDOMINAL)
 				.build();
-		
+
 		ExercicioFuncional exercicioAgregado1 = 
 				new ExercicioFuncional(
-						 GruposMuscularesEnum.INFERIORES, 
-				new ExercicioMobilidade(
-						 GruposMuscularesEnum.PEITO, 
-						new ExercicioResistencia(
-								 GruposMuscularesEnum.ABDOMINAL, 
-								 new ExercicioCardiovascular( 
-										 GruposMuscularesEnum.COSTAS, therapyGecko))));
-	
-		AbstractExercicio.getTiposExercicios().forEach(tipo -> {
-			System.out.println(tipo);
+						GruposMuscularesEnum.INFERIORES, 
+						new ExercicioMobilidade(
+								GruposMuscularesEnum.PEITO, 
+								new ExercicioResistencia(
+										GruposMuscularesEnum.ABDOMINAL, 
+										new ExercicioCardiovascular( 
+												GruposMuscularesEnum.COSTAS, therapyGecko))));
+
+		System.out.println("\nExercicio agregado:");
+		exercicioAgregado1.getTiposExercicios().forEach(tipo -> {
+			System.out.print(tipo + " ");
 		});
-		AbstractExercicio.getGruposMusculares().forEach(grupo -> {
-			System.out.println(grupo);
+		System.out.println("\nGrupos musculares agregados:");
+		exercicioAgregado1.getGruposMusculares().forEach(grupo -> {
+			System.out.print(grupo + " ");
 		});
 	}
 }

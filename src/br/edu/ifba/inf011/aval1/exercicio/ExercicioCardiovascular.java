@@ -1,6 +1,5 @@
 package br.edu.ifba.inf011.aval1.exercicio;
 
-import br.edu.ifba.inf011.aval1.equipamento.Equipamento;
 
 public class ExercicioCardiovascular extends ExercicioDecorator {
 	

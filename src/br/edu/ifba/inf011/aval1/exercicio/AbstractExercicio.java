@@ -5,64 +5,62 @@ import java.util.List;
 import br.edu.ifba.inf011.aval1.equipamento.Equipamento;
 import br.edu.ifba.inf011.aval1.programa.Serie;
 
-public class ConcreteExercicio  implements Exercicio{
+public abstract class AbstractExercicio {
 
-	private String nome;
-	private List<GruposMuscularesEnum> gruposMusculares;
-	private List<ExercicioEnum> tiposExercicios;
-	private List<Equipamento> equipamentos;
-	private Serie serie;
+	private static String nome;
+	private static List<GruposMuscularesEnum> gruposMusculares;
+	private static List<ExercicioEnum> tiposExercicios;
+	private static List<Equipamento> equipamentos;
+	private static Serie serie;
 
-	public ConcreteExercicio(String nome, List<GruposMuscularesEnum> gruposMusculares,
+	public AbstractExercicio(String nome, List<GruposMuscularesEnum> gruposMusculares,
 			List<ExercicioEnum> tiposExercicios, List<Equipamento> equipamentos) {
-		this.nome = nome;
-		this.gruposMusculares = gruposMusculares;
-		this.tiposExercicios = tiposExercicios;
-		this.equipamentos = equipamentos;
+		AbstractExercicio.nome = nome;
+		AbstractExercicio.gruposMusculares = gruposMusculares;
+		AbstractExercicio.tiposExercicios = tiposExercicios;
+		AbstractExercicio.equipamentos = equipamentos;
 	}
-	
-	
-	
-	public String getNome() {
+
+	public static String getNome() {
 		return nome;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		AbstractExercicio.nome = nome;
 	}
 
-	public List<GruposMuscularesEnum> getGruposMusculares() {
+	public static List<GruposMuscularesEnum> getGruposMusculares() {
 		return gruposMusculares;
 	}
 
 	public void setGruposMusculares(List<GruposMuscularesEnum> gruposMusculares) {
-		this.gruposMusculares = gruposMusculares;
+		AbstractExercicio.gruposMusculares = gruposMusculares;
 	}
 
 
-	public List<ExercicioEnum> getTiposExercicios() {
+	public static List<ExercicioEnum> getTiposExercicios() {
 		return tiposExercicios;
 	}
 
 
 	public void setTiposExercicios(List<ExercicioEnum> tiposExercicios) {
-		this.tiposExercicios = tiposExercicios;
+		AbstractExercicio.tiposExercicios = tiposExercicios;
 	}
 
-	public List<Equipamento> getEquipamentos() {
+	public  static List<Equipamento> getEquipamentos() {
 		return equipamentos;
 	}
 
 	public void setEquipamentos(List<Equipamento> equipamentos) {
-		this.equipamentos = equipamentos;
+		AbstractExercicio.equipamentos = equipamentos;
 	}
 
-	public Serie getSerie() {
+	public static Serie getSerie() {
 		return serie;
 	}
 
 	public void setSerie(Serie serie) {
-		this.serie = serie;
+		AbstractExercicio.serie = serie;
 	}
 
 	@Override
@@ -99,14 +97,6 @@ public class ConcreteExercicio  implements Exercicio{
 		stringBuilder.append('.');
 		
 		return stringBuilder.toString();
-	}
-
-
-
-	@Override
-	public void montar() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -48,8 +48,8 @@ public class ExercicioBuilder {
 		return this;
 	}
 
-	public ConcreteExercicio build() {
-		return new ConcreteExercicio(this.nome, this.gruposMusculares, this.tiposExercicios, this.equipamentos);
+	public ExercicioBase build() {
+		return new ExercicioBase(this.nome, this.gruposMusculares, this.tiposExercicios, this.equipamentos);
 	}
 
 	public List<GruposMuscularesEnum> getGruposMusculares() {

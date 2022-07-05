@@ -94,7 +94,7 @@ public class Cliente {
 
 		ExercicioBuilder builderExercicio  = new ExercicioBuilder();
 
-		ConcreteExercicio metalGearSolid = builderExercicio
+		ExercicioBase metalGearSolid = builderExercicio
 				.reset("Rotina Solid Snake")
 				.comEquipamento(acessorio1)
 				.comEquipamento(maquina1)
@@ -104,7 +104,7 @@ public class Cliente {
 				.build();
 		System.out.println(metalGearSolid);
 
-		ConcreteExercicio superMario = builderExercicio
+		ExercicioBase superMario = builderExercicio
 				.reset("Rotina Super Mario Bros")
 				.comEquipamento(maquina1)
 				.comEquipamento(acessorio2)
@@ -113,7 +113,7 @@ public class Cliente {
 				.build();
 		System.out.println(superMario);
 
-		ConcreteExercicio sprinterCell = builderExercicio
+		ExercicioBase sprinterCell = builderExercicio
 				.reset("Rotina Gary and his Demons")
 				.comEquipamento(maquina2)
 				.comEquipamento(halter3)
@@ -121,8 +121,11 @@ public class Cliente {
 				.comGruposMusculares(GruposMuscularesEnum.INFERIORES)
 				.build();
 		System.out.println(sprinterCell);
-
-
+		
+		
+		
+		
+		
 		SerieBuilder builderSerie = new SerieBuilder();
 		Serie serie1 = builderSerie
 				.reset()
@@ -145,6 +148,8 @@ public class Cliente {
 				.setNumeroRepeticoes(15)
 				.setQuantidade(4)
 				.build();
+		
+		
 
 		ProgramaBuilder programaBuilder = new ProgramaBuilder();
 
@@ -165,6 +170,47 @@ public class Cliente {
 		Instrutor instrutor = new Instrutor("Alberta");
 		aluno.adicionarInstrutores(instrutor);
 		aluno.removerSerieRealizada();
-
+		
+		
+		ExercicioBase therapyGecko = builderExercicio
+				.reset("Rotina Therapy Gecko")
+				.comEquipamento(maquina1)
+				.comEquipamento(halter1)
+				.comTipoExercicio(ExercicioEnum.RESISTENCIA)
+				.comGruposMusculares(GruposMuscularesEnum.COSTAS)
+				.build();
+		
+		ExercicioBase softSkillsEngineering = builderExercicio
+				.reset("Rotina Soft Skills Engineering")
+				.comEquipamento(maquina1)
+				.comEquipamento(halter3)
+				.comTipoExercicio(ExercicioEnum.FUNCIONAL)
+				.comGruposMusculares(GruposMuscularesEnum.PEITO)
+				.build();
+		
+		ExercicioBase JoeRoganExperience = builderExercicio
+				.reset("Rotina The Joe Rogan Experience")
+				.comEquipamento(maquina1)
+				.comEquipamento(maquina2)
+				.comTipoExercicio(ExercicioEnum.RESISTENCIA)
+				.comGruposMusculares(GruposMuscularesEnum.ABDOMINAL)
+				.build();
+		
+		ExercicioFuncional exercicioAgregado1 = 
+				new ExercicioFuncional(
+						 GruposMuscularesEnum.INFERIORES, 
+				new ExercicioMobilidade(
+						 GruposMuscularesEnum.PEITO, 
+						new ExercicioResistencia(
+								 GruposMuscularesEnum.ABDOMINAL, 
+								 new ExercicioCardiovascular( 
+										 GruposMuscularesEnum.COSTAS, therapyGecko))));
+	
+		AbstractExercicio.getTiposExercicios().forEach(tipo -> {
+			System.out.println(tipo);
+		});
+		AbstractExercicio.getGruposMusculares().forEach(grupo -> {
+			System.out.println(grupo);
+		});
 	}
 }

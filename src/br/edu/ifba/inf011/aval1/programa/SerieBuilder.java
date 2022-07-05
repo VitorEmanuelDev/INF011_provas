@@ -1,11 +1,11 @@
 package br.edu.ifba.inf011.aval1.programa;
 
-import br.edu.ifba.inf011.aval1.exercicio.ConcreteExercicio;
-import br.edu.ifba.inf011.aval1.exercicio.Exercicio;
+import br.edu.ifba.inf011.aval1.exercicio.ExercicioBase;
+import br.edu.ifba.inf011.aval1.exercicio.ExercicioBase;
 
 public class SerieBuilder {
 	
-	private ConcreteExercicio exercicio;
+	private ExercicioBase exercicioBase;
     private int numeroRepeticoes;
     private int quantidade;
     
@@ -14,7 +14,7 @@ public class SerieBuilder {
     public SerieBuilder reset(){
         this.numeroRepeticoes = 0;
         this.quantidade = 0;
-        this.exercicio = null;
+        this.exercicioBase = null;
         return this;
     }
 
@@ -29,11 +29,11 @@ public class SerieBuilder {
     }
 
     public Serie build() {
-        return new Serie(this.numeroRepeticoes, this.quantidade, this.exercicio);
+        return new Serie(this.numeroRepeticoes, this.quantidade, this.exercicioBase);
     }
 
-    public SerieBuilder setExercicio(ConcreteExercicio exercicio) {
-        this.exercicio = exercicio;
+    public SerieBuilder setExercicio(ExercicioBase exercicioBase) {
+        this.exercicioBase = exercicioBase;
         return this;
     }
 }

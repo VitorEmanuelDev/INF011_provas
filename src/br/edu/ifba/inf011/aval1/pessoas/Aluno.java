@@ -56,12 +56,12 @@ public class Aluno implements Observable{
 	}
 
 	@Override
-	public void adicionarInstrutores(Observer observer) {
+	public void adicionarInstrutor(Observer observer) {
 		listObservers.add(observer);
 	}
 
 	@Override
-	public void removerInstrutores(Observer observer) {
+	public void removerInstrutor(Observer observer) {
 		listObservers.remove(observer);
 	}
 

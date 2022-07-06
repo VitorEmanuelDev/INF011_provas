@@ -5,7 +5,7 @@ import java.util.List;
 import br.edu.ifba.inf011.aval1.equipamento.Equipamento;
 import br.edu.ifba.inf011.aval1.programa.Serie;
 
-public class AbstractExercicio {
+public abstract class AbstractExercicio {
 
 	private static String nome;
 	private static List<GruposMuscularesEnum> gruposMusculares;

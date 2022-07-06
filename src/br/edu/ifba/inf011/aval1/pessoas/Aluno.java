@@ -2,16 +2,12 @@ package br.edu.ifba.inf011.aval1.pessoas;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
 import br.edu.ifba.inf011.aval1.programa.Programa;
 import br.edu.ifba.inf011.aval1.programa.ProgramaEnum;
 
-public class Aluno implements Observable{
+public class Aluno extends Observable {
 
 	private String nome;
-	private List<Observer> listObservers = new ArrayList<>();
 
 	public Aluno(String nome) {
 		this.nome = nome;
@@ -52,21 +48,6 @@ public class Aluno implements Observable{
 				}
 			});
 		}
-		this.nofificarInstrutores();
-	}
-
-	@Override
-	public void adicionarInstrutor(Observer observer) {
-		listObservers.add(observer);
-	}
-
-	@Override
-	public void removerInstrutor(Observer observer) {
-		listObservers.remove(observer);
-	}
-
-	@Override
-	public void nofificarInstrutores() {
-		listObservers.forEach(observer -> observer.atualizar(this));
+		this.nofifica();
 	}
 }

@@ -11,14 +11,15 @@ public class Serie {
 	private int quantidade;
 	boolean realizada;
 	private Video video;
-	private VideoFlyweightFactory factory = new VideoFlyweightFactory();
+	private VideoFlyweightFactory factory;
 
 	public Serie() {}
 
-	public Serie(int numRepeticoes, int quantidade, ExercicioBase exercicioBase) {
+	public Serie(int numRepeticoes, int quantidade, ExercicioBase exercicioBase, VideoFlyweightFactory factory) {
 		this.numeroRepeticoes = numRepeticoes;
 		this.quantidade = quantidade;
 		this.exercicioBase = exercicioBase;
+		this.factory = factory;
 	}
 
 	public int getNumeroRepeticoes() {

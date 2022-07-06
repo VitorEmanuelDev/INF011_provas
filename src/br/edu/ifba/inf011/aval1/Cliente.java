@@ -146,8 +146,6 @@ public class Cliente {
 				.setQuantidade(4)
 				.build();
 
-
-
 		ProgramaBuilder programaBuilder = new ProgramaBuilder();
 
 		Programa programa = programaBuilder.reset()
@@ -196,6 +194,8 @@ public class Cliente {
 		exercicioAgregado1.getGruposMusculares().forEach(grupo -> {
 			System.out.print(grupo + " ");
 		});
+		
+		VideoFlyweightFactory factory = new VideoFlyweightFactory();
 		
 		ExercicioBase usainBolt = builderExercicio
 				.reset("Rotina Usain Bolt")

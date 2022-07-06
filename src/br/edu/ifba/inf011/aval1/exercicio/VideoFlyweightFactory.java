@@ -18,37 +18,37 @@ public class VideoFlyweightFactory {
 	final private String DESCRICAO_RESISTENCIA = "[VIDEO DO EXERCÍCIO RESISTENCIA: A resistência é a habilidade de poder exercer um\n"
 			+ "esforço estático ou dinâmico prolongado, sem afetar a qualidade do exercício.]\n";
 
-	private HashMap<ExercicioEnum, Video> videods = new HashMap<>();
+	private HashMap<ExercicioEnum, Video> videos = new HashMap<>();
 
 	public Video getVideo(ExercicioEnum tipo) throws Exception {
 
 		Video video = null;
 
-		if(!videods.containsKey(tipo)) {
+		if(!videos.containsKey(tipo)) {
 			switch(tipo) {
 			case CARDIOVASCULAR:
 				video = new Video(tipo, DESCRICAO_CARDIOVASCULAR);
-				videods.put(tipo, video);
+				videos.put(tipo, video);
 				break;
 			case FUNCIONAL:
 				video = new Video(tipo, DESCRICAO_FUNCIONAL);
-				videods.put(tipo, video);
+				videos.put(tipo, video);
 				break;
 			case MOBILIDADE:
 				video = new Video(tipo, DESCRICAO_MOBILIDADE);
-				videods.put(tipo, video);
+				videos.put(tipo, video);
 				break;
 			case RESISTENCIA:
 				video = new Video(tipo, DESCRICAO_RESISTENCIA);
-				videods.put(tipo, video);
+				videos.put(tipo, video);
 				break;
 			default:
 				throw new Exception("Tipo invalido!");
 			}
 		}
 		
-		if(videods.containsKey(tipo)) {
-			video = videods.get(tipo);
+		if(videos.containsKey(tipo)) {
+			video = videos.get(tipo);
 		}
 
 		return video;

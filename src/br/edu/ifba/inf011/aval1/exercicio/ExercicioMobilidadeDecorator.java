@@ -6,6 +6,7 @@ public class ExercicioMobilidadeDecorator extends ExercicioBaseDecorator {
 		super(exercicio);
 	}
 
+	@Override
 	public void comGrupoMuscular(GruposMuscularesEnum grupo) {
 		exercicioWrapper.getTiposExercicios().add(ExercicioEnum.MOBILIDADE);
 		super.comGrupoMuscular(grupo);

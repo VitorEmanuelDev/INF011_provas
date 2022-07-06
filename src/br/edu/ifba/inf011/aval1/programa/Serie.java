@@ -54,7 +54,11 @@ public class Serie {
 		System.out.println("SERIES: " + this.getQuantidade());
 		System.out.println("\n");
 		this.getExercicio().getTiposExercicios().forEach(tipo -> {
-			video = factory.getVideo(tipo);
+			try {
+				video = factory.getVideo(tipo);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			System.out.println(video.getDescricao());
 
 		});

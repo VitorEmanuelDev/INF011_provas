@@ -8,9 +8,9 @@ import javax.management.InstanceNotFoundException;
 import br.edu.ifba.inf011.aval1.equipamento.Equipamento;
 import br.edu.ifba.inf011.aval1.equipamento.EquipamentoEnum;
 
-public class EquipamentoFactory {
+public class EquipamentoSingleton {
 
-	private static EquipamentoFactory instancia;
+	private static EquipamentoSingleton instancia;
 
 	private HashMap<String, Equipamento> equipamentos;
 
@@ -18,14 +18,14 @@ public class EquipamentoFactory {
 	MaquinaFactory maquinaFactory = new MaquinaFactory();
 	HalterFactory halterFactory = new HalterFactory();
 
-	public static EquipamentoFactory getInstance() {
+	public static EquipamentoSingleton getInstance() {
 		if (instancia == null) {
-			instancia = new EquipamentoFactory();
+			instancia = new EquipamentoSingleton();
 		}
 		return instancia;
 	}
 
-	private EquipamentoFactory() {
+	private EquipamentoSingleton() {
 		this.equipamentos = new HashMap<>();
 	}
 

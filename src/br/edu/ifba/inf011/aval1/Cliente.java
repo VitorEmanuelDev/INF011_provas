@@ -123,9 +123,6 @@ public class Cliente {
 		System.out.println(sprinterCell);
 
 
-
-
-
 		SerieBuilder builderSerie = new SerieBuilder();
 		Serie serie1 = builderSerie
 				.reset()
@@ -180,21 +177,6 @@ public class Cliente {
 				.comGruposMusculares(GruposMuscularesEnum.COSTAS)
 				.build();
 
-		ExercicioBase softSkillsEngineering = builderExercicio
-				.reset("Rotina Soft Skills Engineering")
-				.comEquipamento(maquina1)
-				.comEquipamento(halter3)
-				.comTipoExercicio(ExercicioEnum.FUNCIONAL)
-				.comGruposMusculares(GruposMuscularesEnum.PEITO)
-				.build();
-
-		ExercicioBase JoeRoganExperience = builderExercicio
-				.reset("Rotina The Joe Rogan Experience")
-				.comEquipamento(maquina1)
-				.comEquipamento(maquina2)
-				.comTipoExercicio(ExercicioEnum.RESISTENCIA)
-				.comGruposMusculares(GruposMuscularesEnum.ABDOMINAL)
-				.build();
 
 		ExercicioFuncional exercicioAgregado1 = 
 				new ExercicioFuncional(
@@ -214,5 +196,27 @@ public class Cliente {
 		exercicioAgregado1.getGruposMusculares().forEach(grupo -> {
 			System.out.print(grupo + " ");
 		});
+		
+		ExercicioBase usainBolt = builderExercicio
+				.reset("Rotina Usain Bolt")
+				.comEquipamento(maquina1)
+				.comEquipamento(acessorio2)
+				.comTipoExercicio(ExercicioEnum.FUNCIONAL)
+				.comTipoExercicio(ExercicioEnum.CARDIOVASCULAR)
+				.comTipoExercicio(ExercicioEnum.MOBILIDADE)
+				.comTipoExercicio(ExercicioEnum.RESISTENCIA)
+				.comGruposMusculares(GruposMuscularesEnum.COSTAS)
+				.build();
+		
+		Serie serie4 = builderSerie
+				.reset()
+				.setExercicio(usainBolt)
+				.setNumeroRepeticoes(15)
+				.setQuantidade(4)
+				.build();
+		System.out.println("\n");
+		serie4.executar();
+		
+		
 	}
 }

@@ -1,6 +1,5 @@
 package br.edu.ifba.inf011.aval1.pessoas;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

@@ -1,7 +1,6 @@
 package br.edu.ifba.inf011.aval1.programa;
 
 import br.edu.ifba.inf011.aval1.exercicio.ExercicioBase;
-import br.edu.ifba.inf011.aval1.exercicio.ExercicioBase;
 
 public class SerieBuilder {
 	

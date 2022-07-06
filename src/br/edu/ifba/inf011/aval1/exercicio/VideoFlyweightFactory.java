@@ -6,7 +6,7 @@ import br.edu.ifba.inf011.aval1.strategy.ABCDStrategy;
 import br.edu.ifba.inf011.aval1.strategy.CardioStrategy;
 import br.edu.ifba.inf011.aval1.strategy.FullBodyStrategy;
 
-public class VideoFactory {
+public class VideoFlyweightFactory {
 
 	private String DESCRICAO_CARDIOVASCULAR = "[VIDEO DO EXERCÍCIO CARDIO: Exercícios cardio são atividades que solicitam a \n"
 			+ "função cardíaca, nomeadamente as funções respiratória e circulatória]\n";

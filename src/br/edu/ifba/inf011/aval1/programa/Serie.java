@@ -2,7 +2,7 @@ package br.edu.ifba.inf011.aval1.programa;
 
 import br.edu.ifba.inf011.aval1.exercicio.ExercicioBase;
 import br.edu.ifba.inf011.aval1.exercicio.Video;
-import br.edu.ifba.inf011.aval1.exercicio.VideoFactory;
+import br.edu.ifba.inf011.aval1.exercicio.VideoFlyweightFactory;
 
 public class Serie {
 
@@ -11,7 +11,7 @@ public class Serie {
 	private int quantidade;
 	boolean realizada;
 	private Video video;
-	private VideoFactory factory = new VideoFactory();
+	private VideoFlyweightFactory factory = new VideoFlyweightFactory();
 
 	public Serie() {}
 

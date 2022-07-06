@@ -163,7 +163,7 @@ public class Cliente {
 		Aluno aluno = new Aluno("Janaína");
 		aluno.setPrograma(programa);
 		Instrutor instrutor = new Instrutor("Alberta");
-		aluno.adicionarInstrutor(instrutor);
+		aluno.adicionaObserver(instrutor);
 		aluno.removerSerieRealizada();
 
 

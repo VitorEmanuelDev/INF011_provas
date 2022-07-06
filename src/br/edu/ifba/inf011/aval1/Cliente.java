@@ -176,15 +176,19 @@ public class Cliente {
 				.build();
 
 
-		ExercicioFuncional exercicioAgregado1 = 
-				new ExercicioFuncional(
-						GruposMuscularesEnum.INFERIORES, 
-						new ExercicioMobilidade(
-								GruposMuscularesEnum.PEITO, 
-								new ExercicioResistencia(
-										GruposMuscularesEnum.ABDOMINAL, 
-										new ExercicioCardiovascular( 
-												GruposMuscularesEnum.COSTAS, therapyGecko))));
+		ExercicioBase exercicioAgregado1 = therapyGecko;
+
+		ExercicioBaseDecorator exercicioDecorator = new ExercicioFuncionalDecorator(exercicioAgregado1);
+		exercicioDecorator.comGrupoMuscular(GruposMuscularesEnum.INFERIORES);
+
+		exercicioDecorator = new ExercicioMobilidadeDecorator(exercicioAgregado1);
+		exercicioDecorator.comGrupoMuscular(GruposMuscularesEnum.PEITO);
+
+		exercicioDecorator = new ExercicioResistenciaDecorator(exercicioAgregado1);
+		exercicioDecorator.comGrupoMuscular(GruposMuscularesEnum.ABDOMINAL);
+
+		exercicioDecorator = new ExercicioCardiovascularDecorator(exercicioAgregado1);
+		exercicioDecorator.comGrupoMuscular(GruposMuscularesEnum.COSTAS);
 
 		System.out.println("\nExercicio agregado:");
 		exercicioAgregado1.getTiposExercicios().forEach(tipo -> {

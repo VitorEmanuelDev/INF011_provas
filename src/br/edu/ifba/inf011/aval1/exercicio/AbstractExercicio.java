@@ -7,60 +7,61 @@ import br.edu.ifba.inf011.aval1.programa.Serie;
 
 public abstract class AbstractExercicio {
 
-	private static String nome;
-	private static List<GruposMuscularesEnum> gruposMusculares;
-	private static List<ExercicioEnum> tiposExercicios;
-	private static List<Equipamento> equipamentos;
-	private static Serie serie;
+	private String nome;
+	private List<GruposMuscularesEnum> gruposMusculares;
+	private List<ExercicioEnum> tiposExercicios;
+	private List<Equipamento> equipamentos;
+	private Serie serie;
 
 	public AbstractExercicio(String nome, List<GruposMuscularesEnum> gruposMusculares,
-			List<ExercicioEnum> tiposExercicios, List<Equipamento> equipamentos) {
-		AbstractExercicio.nome = nome;
-		AbstractExercicio.gruposMusculares = gruposMusculares;
-		AbstractExercicio.tiposExercicios = tiposExercicios;
-		AbstractExercicio.equipamentos = equipamentos;
+			List<ExercicioEnum> tiposExercicios, List<Equipamento> equipamentos, Serie serie) {
+		this.nome = nome;
+		this.gruposMusculares = gruposMusculares;
+		this.tiposExercicios = tiposExercicios;
+		this.equipamentos = equipamentos;
+		this.serie = serie;
 	}
 
-	public static String getNome() {
+	public String getNome() {
 		return nome;
 	}
 
 	public void setNome(String nome) {
-		AbstractExercicio.nome = nome;
+		this.nome = nome;
 	}
 
-	public static List<GruposMuscularesEnum> getGruposMusculares() {
+	public List<GruposMuscularesEnum> getGruposMusculares() {
 		return gruposMusculares;
 	}
 
 	public void setGruposMusculares(List<GruposMuscularesEnum> gruposMusculares) {
-		AbstractExercicio.gruposMusculares = gruposMusculares;
+		this.gruposMusculares = gruposMusculares;
 	}
 
 
-	public static List<ExercicioEnum> getTiposExercicios() {
+	public List<ExercicioEnum> getTiposExercicios() {
 		return tiposExercicios;
 	}
 
 
 	public void setTiposExercicios(List<ExercicioEnum> tiposExercicios) {
-		AbstractExercicio.tiposExercicios = tiposExercicios;
+		this.tiposExercicios = tiposExercicios;
 	}
 
-	public  static List<Equipamento> getEquipamentos() {
+	public List<Equipamento> getEquipamentos() {
 		return equipamentos;
 	}
 
 	public void setEquipamentos(List<Equipamento> equipamentos) {
-		AbstractExercicio.equipamentos = equipamentos;
+		this.equipamentos = equipamentos;
 	}
 
-	public static Serie getSerie() {
+	public Serie getSerie() {
 		return serie;
 	}
 
 	public void setSerie(Serie serie) {
-		AbstractExercicio.serie = serie;
+		this.serie = serie;
 	}
 
 	@Override

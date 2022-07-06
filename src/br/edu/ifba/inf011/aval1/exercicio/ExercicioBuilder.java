@@ -3,6 +3,7 @@ package br.edu.ifba.inf011.aval1.exercicio;
 import java.util.ArrayList;
 import java.util.List;
 import br.edu.ifba.inf011.aval1.equipamento.Equipamento;
+import br.edu.ifba.inf011.aval1.programa.Serie;
 
 public class ExercicioBuilder {
 
@@ -10,6 +11,7 @@ public class ExercicioBuilder {
 	private List<GruposMuscularesEnum> gruposMusculares;
 	private List<ExercicioEnum> tiposExercicios;
 	private List<Equipamento> equipamentos;
+	private Serie serie;
 
 	public ExercicioBuilder() {}
 	
@@ -21,6 +23,7 @@ public class ExercicioBuilder {
 		this.gruposMusculares  = new ArrayList<>();
 		this.tiposExercicios = new ArrayList<>();
 		this.equipamentos  = new ArrayList<>();
+		this.serie = null;
 		return this;
 	}
 	
@@ -29,6 +32,7 @@ public class ExercicioBuilder {
 		this.gruposMusculares  = new ArrayList<>();
 		this.tiposExercicios = new ArrayList<>();
 		this.equipamentos  = new ArrayList<>();
+		this.serie = null;
 		return this;
 	}
 
@@ -49,7 +53,7 @@ public class ExercicioBuilder {
 	}
 
 	public ExercicioBase build() {
-		return new ExercicioBase(this.nome, this.gruposMusculares, this.tiposExercicios, this.equipamentos);
+		return new ExercicioBase(this.nome, this.gruposMusculares, this.tiposExercicios, this.equipamentos, this.serie);
 	}
 
 	public List<GruposMuscularesEnum> getGruposMusculares() {
@@ -62,6 +66,14 @@ public class ExercicioBuilder {
 
 	public String getNome() {
 		return nome;
+	}
+	
+	public Serie getSerie() {
+		return serie;
+	}
+	
+	public void getSerie(Serie serie) {
+		this.serie = serie;
 	}
 
 	public List<Equipamento> getEquipamentos() {

@@ -211,6 +211,7 @@ public class Cliente {
 		Serie serie4 = builderSerie
 				.reset()
 				.setExercicio(usainBolt)
+				.setFactory(factory)
 				.setNumeroRepeticoes(15)
 				.setQuantidade(4)
 				.build();
